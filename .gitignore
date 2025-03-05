@@ -1,0 +1,21 @@
+# Ignorer les dépendances Node.js
+node_modules/
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# Ignorer les fichiers de build
+.next/
+dist/
+
+# Ignorer les fichiers de logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Ignorer l'environnement local
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
