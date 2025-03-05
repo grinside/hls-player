@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import VideoPlayer from "@/components/VideoPlayer";
-import ThumbnailGrid from "@/components/ThumbnailGrid";
+import VideoPlayer from "../components/VideoPlayer";
+import ThumbnailGrid from "../components/ThumbnailGrid";
 
 export default function Home() {
   const [videoSrc, setVideoSrc] = useState(null);
