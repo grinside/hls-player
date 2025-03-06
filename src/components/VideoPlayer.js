@@ -1,10 +1,12 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import Hls from "hls.js";
 
-export default function VideoPlayer({ videoSrc }) {
+export function VideoPlayer({ videoSrc }) {
+  const videoRef = useRef(null);
+
   useEffect(() => {
     if (videoSrc) {
-      const video = document.getElementById("video-player");
+      const video = videoRef.current;
       if (Hls.isSupported()) {
         const hls = new Hls();
         hls.loadSource(videoSrc);
@@ -16,8 +18,8 @@ export default function VideoPlayer({ videoSrc }) {
   }, [videoSrc]);
 
   return (
-    <div className="w-full max-w-md">
-      <video id="video-player" controls className="w-full rounded-lg shadow-lg"></video>
+    <div className="relative w-full h-[60vh] md:h-[70vh] lg:h-[80vh] flex items-center justify-center bg-black">
+      <video ref={videoRef} controls className="w-full h-full object-cover rounded-lg shadow-lg"></video>
     </div>
   );
 }

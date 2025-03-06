@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import VideoPlayer from "../components/VideoPlayer";
-import ThumbnailGrid from "../components/ThumbnailGrid";
+import { VideoPlayer } from "@/components/VideoPlayer";
+import { ThumbnailGrid } from "@/components/ThumbnailGrid";
 
-export default function Home() {
+export default function HLSPlayer() {
   const [videoSrc, setVideoSrc] = useState(null);
   const [streams, setStreams] = useState([]);
   const [token, setToken] = useState(null);
@@ -30,8 +30,8 @@ export default function Home() {
   }, [token]);
 
   return (
-    <div className="bg-gray-900 text-white min-h-screen flex flex-col items-center p-4">
-      <h1 className="text-xl font-bold mb-4">HLS Video Player</h1>
+    <div className="bg-black text-white min-h-screen flex flex-col items-center p-4">
+      <h1 className="text-2xl font-bold mb-4">Max it TV MAQUISARDS saison 2</h1>
       <VideoPlayer videoSrc={videoSrc} />
       <ThumbnailGrid streams={streams} onSelect={setVideoSrc} />
     </div>
