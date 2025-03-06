@@ -12,7 +12,7 @@ export default function HLSPlayer() {
       const response = await fetch("/api/getToken");
       const data = await response.json();
       setToken(data.token);
-      console.log("Token JWT reçu :", data.token); // 🔍 DEBUG
+      console.log("Token JWT reçu !! :", data.token); // 🔍 DEBUG
     }
     fetchToken();
   }, []);
